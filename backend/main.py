@@ -94,16 +94,19 @@ def get_current_user(
 
 app = FastAPI(title="FinTrack AI API")
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://fintrack-mu-amber.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 class TransactionCreate(BaseModel):
     title: str = Field(min_length=1, max_length=100)
