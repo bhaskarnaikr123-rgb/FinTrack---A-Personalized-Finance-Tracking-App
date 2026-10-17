@@ -6,7 +6,7 @@ export default function Navbar() {
         <header className="border-b border-slate-200 bg-white">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
                 <Link href="/" className="text-xl font-bold text-slate-900">
-                    FinTrack <span className="text-emerald-600">AI</span>
+                    Fin<span className="text-emerald-600">Track</span>- A Personalized Financial Tracking App
                 </Link>
 
                 <div className="hidden items-center gap-8 md:flex">
