@@ -11,7 +11,16 @@ BASE_DIR = Path(__file__).resolve().parent
 
 
 def get_connection():
-    host = os.getenv("DB_HOST", "localhost")
+    host = os.getenv("DB_HOST", "").strip()
+
+    if not host:
+        raise RuntimeError("DB_HOST is missing or empty in the Render environment")
+
+    print(
+        f"Database host configured: "
+        f"{'cloud' if host not in ('localhost', '127.0.0.1') else 'localhost'}"
+    )
+
     is_local = host in ("localhost", "127.0.0.1")
 
     config = {
